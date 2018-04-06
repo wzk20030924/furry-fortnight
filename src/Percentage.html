@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <script>
+        var amount = 0;
+        for (var j = 0; j < 100; j++) {
+            var birthdayList = [];
+            var existSame = false;
+            for (var i = 0; i < 31; i++) {
+                var birthday = Math.floor(Math.random() * 365);
+                if (birthdayList.indexOf(birthday) < 0) {
+                    birthdayList.push(birthday);
+                }
+                else {
+                    existSame = true;
+                    amount = amount + 1;
+                    break;
+                }
+            }
+           // document.write(existSame)
+        }
+        document.write(amount)
+        document.write("<br>")
+        var exact=1
+        for(i=0;i<31;i++){
+            exact=exact*(365-i)/365;
+        }
+        document.write(1-exact)
+    </script>
+</body>
+
+</html>

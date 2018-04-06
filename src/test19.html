@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+    <script>
+        var colors = ["♥", "♦", "♣", "♠"];
+
+        var points = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        var amount = 0;
+        var times = Math.round(prompt("循环的次数？"))
+        for (var k = 0; k < times; k++) {
+
+            var list = [];
+            for (var i = 0; i < 4; i++) {
+
+                for (var j = 0; j < 13; j++) {
+
+                  //  document.write(colors[i] + points[j]);
+                    list.splice(Math.floor(Math.random() * (list.length + 1)), 0, colors[i] + points[j]);
+                }
+                //document.write("<br>")
+            }
+            /*for (i = 0; i < list.length; i++) {
+                document.write(list[i])
+            }*/
+            //"".substr(1,1)
+
+            var count = 0;
+            for (var i = 0; i < 13; i++) {
+                if (list[i].substr(1, 1) == "A") {
+                    count = count + 1;
+                }
+            }
+            if (count == 4) {
+                amount = amount + 1;
+            }
+        }
+        document.write(amount+"%")
+    </script>
+</body>
+</html>
